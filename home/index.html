@@ -15,12 +15,12 @@
             height: 500px;
             color: white;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             position: relative;
         }
-        .header h1, .header p {
+        h1, {
             potition: absolute;
             font-size: 3rem;
             color: #ffffff;
@@ -68,6 +68,15 @@
         h1 {
             text-align: center;
         }
+        .server-status {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .server-online {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -80,12 +89,29 @@
                 <li><a href="frour.my.id/perks">Perks</a></li>
             </ul>
         </nav>
-        <h1>Four Network ID</h1>
-        <p>Luckyblock theme minecraft server</p>
+        <h1 class="h1">Four Network ID</h1>
+        <p class="p">Luckyblock theme minecraft server</p>
     </header>
-<div class="content">
-    <h3>Test</h3>
+<div class="server-status">
+        FOUR is Currently <span class="server-online"></span>!<br>
+        Players online: <span class="player-count"></span> dari 2024
 </div>
+<script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+    <script>
+        MinecraftAPI.getServerStatus('play.four.my.id', {
+            port: 19135 // Ganti dengan port server Anda jika berbeda
+        }, function (err, status) {
+            if (err) {
+                return document.querySelector('.server-status').innerHTML = 'Error loading status';
+            }
+
+            // Update status server
+            document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
+
+            // Update jumlah pemain
+            document.querySelector('.player-count').innerHTML = status.players.now || 0;
+        });
+    </script>
 <div class="content">
     <a href="https://dc.gg/fournetwork"><button class"btn btn-primary">Discord</button></a>
 </div>
