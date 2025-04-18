@@ -11,6 +11,7 @@
             background-color: #f9f9f9;
         }
         .header {
+            background-image: srcbanner;
             background-color: #0a0909;
             background-size: cover;
             height: 50px;
@@ -94,6 +95,16 @@
             text-align: right;
             z-index: 1;
         }
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 10px; 
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -106,7 +117,7 @@
     </header>
 <div class="image-container">
     <img src="banner.png" alt="banner" height="500">
-    <div class="overlay-text"><h1 class="h1">Four Network ID</h1></div>
+    <div class="header-text"><h1 class="h1">Four Network ID</h1></div>
     <p>Luckyblock theme minecraft server</p>
 </div>
 <div class="content">
