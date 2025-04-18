@@ -23,7 +23,7 @@
             width: auto;
         }
         h1 {
-            potition: absolute;
+            position: absolute; /* corrected the typo 'potition' */
             font-size: 3rem;
             color: #ffffff;
             z-index: 1;
@@ -122,19 +122,23 @@
 <body>
     <header class="header">
         <div class="text-center mt-4">
-            <ul>
-                <nav>
-                    <a href="https://four.my.id/home" class="mr-3"><h4>Home</h4></a>
-                    <a href="https://four.my.id/store" class="mr-3"><h4>Store</h4></a>
-                    <a href="https://four.my.id/perks" class="mr-3"><h4>Perks</h4></a>
-                </nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="https://four.my.id/home" class="nav-link"><h4>Home</h4></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://four.my.id/store" class="nav-link"><h4>Store</h4></a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://four.my.id/perks" class="nav-link"><h4>Perks</h4></a>
+                </li>
             </ul>
             <hr>
         </div>
     </header>
     <div class="banner">
-        <div class="header-text"><h1>  Four Network ID  </h1></div>
-        <p class="header-p">  Luckyblock theme minecraft server  </p>
+        <div class="header-text"><h1> Four Network ID </h1></div>
+        <p class="header-p"> Luckyblock theme minecraft server </p>
     </div>
     
     <div class="content">
@@ -146,27 +150,21 @@
     <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
     <script>
         MinecraftAPI.getServerStatus('play.four.my.id', {
-            port: 19135 // Ganti dengan port server Anda jika berbeda
+            port: 19135 // Replace with your server port if different
         }, function (err, status) {
             if (err) {
                 return document.querySelector('.server-status').innerHTML = 'Error loading status';
             }
 
-            // Update status server
+            // Update server status
             document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
 
-            // Update jumlah pemain
+            // Update player count
             document.querySelector('.player-count').innerHTML = status.players.now || 0;
         });
     </script>
     <div class="content">
-        <a href="https://dc.gg/fournetwork"><button class"btn btn-primary">Discord</button></a>
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
+        <a href="https://dc.gg/fournetwork"><button class="btn btn-primary">Discord</button></a>
     </div>
     <footer>
         <div class="footer-content">
@@ -175,7 +173,6 @@
                 <p>Luckyblock Theme Server</p>
             </div>
             <div class="footer-section">
-            
                 <h4>Contact</h4>          
                 <p>Email: support@four.my.id</p>      
                 <p>Discord: antophd</p>       
