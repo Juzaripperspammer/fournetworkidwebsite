@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOUR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff9e03;
+            margin: 0;
+            padding: 20px;
+        }
+        .server-status {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .server-online {
+            font-weight: bold;
+        }
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Four Network ID</h1>
+    <h2>Luckyblock theme Minecraft server</h2>
+
+    <div class="server-status">
+        FOUR is Currently <span class="server-online">loading...</span>!<br>
+        Players online: <span class="player-count">0</span> dari 2024
+    </div>
+
+    <button class="copy-button" onclick="salinLink()">IP Server</button>
+
+    <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+    <script>
+        function salinLink() {
+            const url = "play.four.my.id"; // Replace with actual URL
+            const input = document.createElement('input');
+            input.value = url;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert("Link has been copied: " + url);
+        }
+
+        MinecraftAPI.getServerStatus('play.four.my.id', { port: 19135 }, function(err, status) {
+            if (err) {
+                document.querySelector('.server-online').innerHTML = 'Error loading status';
+                return;
+            }
+            document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
+            document.querySelector('.player-count').innerHTML = status.players.now || 0;
+        });
+    </script>
+</body>
+</html>
