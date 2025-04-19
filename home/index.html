@@ -19,7 +19,7 @@
             color: #ffffff;
             z-index: 1000;
             transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
-            visibility: hidden; /* Initially hidden */
+            visibility: invisible; /* Initially hidden */
         }
         .header.visible {
             visibility: visible; /* Make it visible when scrolling down */
@@ -142,11 +142,11 @@
         const header = document.querySelector('.header');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY) {
+            if (window.scrollY < lastScrollY) {
                 // Scrolling down
                 header.classList.remove('visible');
                 header.classList.add('hidden');
-            } else if (window.scrollY < lastScrollY) {
+            } else if (window.scrollY > lastScrollY) {
                 // Scrolling up
                 header.classList.remove('hidden');
                 header.classList.add('visible');
