@@ -147,17 +147,17 @@
             document.querySelector('.player-count').innerHTML = status.players.now || 0;
         });
 
-        // Header visibility on scroll
         let lastScrollTop = 0;
-        const header = document.querySelector('.header');
-        window.addEventListener('scroll', function () {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                header.classList.add('hidden'); // Hide header when scrolling down
-            } else {
-                header.classList.remove('hidden'); // Show header when scrolling up
-            }
-            lastScrollTop = scrollTop;
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 0) {
+            header.classList.remove('hidden');
+        } else {
+            header.classList.add('hidden');
+        }
+        lastScrollTop = scrollTop;
+    });
         });
     </script>
     <div class="content">
