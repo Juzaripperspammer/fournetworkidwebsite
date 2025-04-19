@@ -12,30 +12,20 @@
             margin: 0;
         }
         .header {
-            position: sticky;
+            position: fixed;
+            top: 0;
+            width: 100%;
             background-color: #0f0e0b;
-            background-size: cover;
-            height: 50px;
             color: white;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            text-align: right;
-            width: auto;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
         }
-        nav ul {
-             list-style: none;
-             display: flex;
-        }
-
-        nav ul li {
-            height: 25px;
+        .header.hidden {
+            transform: translateY(-100%);
         }
         h1 {
             font-size: 3rem;
             color: #ffffff;
-            z-index: 1;
-            width: auto;
         }
         .content {
             background-color: #ff9800;
@@ -72,43 +62,10 @@
         .footer-section h4 {
             margin-bottom: 10px;
         }
-        .footer-section p {
-            margin: 5px 0;
-        }
         .server-status {
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .server-online {
-            font-weight: bold;
-        }
-        img {
-            background-size: cover;
-            height: 150px;
-            width: 100%;
-            color: #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            margin: auto;
-        }
-        .header-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            color: #ffffff;
-        }
-        .header-p {
-            position: absolute;
-            top: 57%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ffffff;
         }
         .banner {
             background-image: url('banner.png');
@@ -129,81 +86,81 @@
 </head>
 <body>
     <header class="header">
-        <div class="text-center mt-4">
-            <aside>
-                <ul class="nav justify-content-center">
-                    <li>
-                        <a href="https://four.my.id/home" class="nav-link"><p>Home</p></a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Four Network ID</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/home">Home</a>
                     </li>
-                    <li>
-                        <a href="https://four.my.id/store" class="nav-link"><p>Store</p></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/store">Store</a>
                     </li>
-                        <li>
-                        <a href="https://four.my.id/perks" class="nav-link"><p>Perks</p></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/perks">Perks</a>
                     </li>
                 </ul>
-            </aside>
-            <hr>
-        </div>
+            </div>
+        </nav>
     </header>
+
     <div class="banner">
-        <div class="header-text"><h1> Four Network ID </h1></div>
-        <p class="header-p"> Luckyblock theme minecraft server </p>
+        <div class="header-text"><h1>Four Network ID</h1></div>
+        <p class="header-p">Luckyblock theme Minecraft server</p>
     </div>
-    
+
     <div class="content">
         <div class="server-status">
             FOUR is Currently <span class="server-online"></span>!<br>
             Players online: <span class="player-count"></span> dari 2025
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
     <script>
-        MinecraftAPI.getServerStatus('play.four.my.id', {
-            port: 19135 // Replace with your server port if different
-        }, function (err, status) {
+        // Update server status
+        MinecraftAPI.getServerStatus('play.four.my.id', { port: 19135 }, function (err, status) {
             if (err) {
                 return document.querySelector('.server-status').innerHTML = 'Error loading status';
             }
-
-            // Update server status
             document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
-
-            // Update player count
             document.querySelector('.player-count').innerHTML = status.players.now || 0;
         });
+
+        // Header visibility on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                header.classList.add('hidden'); // Hide header when scrolling down
+            } else {
+                header.classList.remove('hidden'); // Show header when scrolling up
+            }
+            lastScrollTop = scrollTop;
+        });
     </script>
-    <div class="content">
-        <a href="https://dc.gg/fournetwork"><button class="btn btn-primary">Discord</button></a>
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
     <footer>
         <div class="footer-content">
-            <div class="footer-section">    
+            <div class="footer-section">
                 <p>&copy; Four Network ID</p>
                 <p>Luckyblock Theme Server</p>
             </div>
             <div class="footer-section">
-                <h4>Contact</h4>          
-                <p>Email: support@four.my.id</p>      
-                <p>Discord: antophd</p>       
-                <a href="https://dc.gg/fournetwork" class="a"><p>Four Network discord server</p></a>
+                <h4>Contact</h4>
+                <p>Email: support@four.my.id</p>
+                <p>Discord: antophd</p>
+                <a href="https://dc.gg/fournetwork" class="a"><p>Four Network Discord server</p></a>
             </div>
-            <div class="footer-section">           
-                <h4>Follow us</h4>     
-                <p>TikTok</p>  
-                <a href="https://tiktok.com/@antop.hd" class="a"><p>@antop.hd</p></a> 
+            <div class="footer-section">
+                <h4>Follow us</h4>
+                <p>TikTok</p>
+                <a href="https://tiktok.com/@antop.hd" class="a"><p>@antop.hd</p></a>
                 <a href="https://tiktok.com/@fournetworkid" class="a"><p>@fournetworkid</p></a>
             </div>
         </div>
