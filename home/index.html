@@ -15,18 +15,18 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+            background-color: rgba(15, 14, 11, 0.8);
             color: #ffffff;
             z-index: 1000;
             transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
         }
         .header.visible {
-            visibility: visible; /* Make it visible when scrolling down */
-            transform: translateY(0); /* Position the header */
+            backgrond-color: rgba(0, 0, 0, 0)
+            transform: translateY(0);
         }
         .header.hidden {
-            transform: translateY(-100%); /* Hide the header */
-            visibility: hidden; /* Ensure it is hidden when above */
+            transform: translateY(-100%);
+            backgrond-color: rgba(15, 14, 11, 0.8)
         }
         .header-text {
             position: absolute;
