@@ -31,38 +31,22 @@
             margin-top: 20px;
             font-size: 0.9em;
         }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h1>Four Network ID</h1>
 
-    <?php
-    // Check if the form is submitted
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Collect the value of the input field
-        $networkID = htmlspecialchars(trim($_POST['networkID']));
-        
-        // Validate the input (optional)
-        if (!empty($networkID)) {
-            // Save the data to a file
-            $file = 'data.txt';  // File where data will be saved
-            file_put_contents($file, $networkID . PHP_EOL, FILE_APPEND | LOCK_EX);
-            
-            // Display a success message
-            echo "<p>Network ID saved! <a href='index.html'>Go back</a></p>";
-        } else {
-            echo "<p>Please enter a valid Network ID.</p>";
-        }
-    } 
-    else {
-        // Show form if it's not a POST request
-        echo '<form action="" method="post">
-                <label for="networkID">Enter Network ID:</label>
-                <input type="text" id="networkID" name="networkID" required>
-                <input type="submit" value="Submit">
-              </form>';
-    }
-    ?>
+    <form id="networkForm">
+        <label for="networkID">Enter Network ID:</label>
+        <input type="text" id="networkID" name="networkID" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
 
     <footer>
         <p>© TheFour - a Minecraft server</p>
@@ -73,5 +57,20 @@
             <a href="https://www.tiktok.com/@thefour_official">thefour_official</a>
         </p>
     </footer>
+
+    <script>
+        document.getElementById('networkForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get the value from the input field
+            const networkID = document.getElementById('networkID').value;
+
+            // Display the result
+            document.getElementById('result').innerText = `Network ID saved: ${networkID}`;
+
+            // Optionally, you can clear the input field after submission
+            document.getElementById('networkID').value = '';
+        });
+    </script>
 </body>
 </html>
