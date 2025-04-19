@@ -10,6 +10,17 @@
             background-color: #ff9800;
             margin: 0;
         }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #0f0e0b;
+            color: #ffffff;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+        b {
+            color: #ffffff;
         .card {
             background-color: #fff;
             border-radius: 10px;
@@ -112,6 +123,27 @@
     </style>
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Four Network ID</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/home"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/store"><b>Store</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/perks"><b>Perks</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="banner">
         <div class="header-text"><h1> STORE </h1></div>
     </div>
@@ -170,6 +202,24 @@
     <div class="coming-soon"><strong>[COMING SOON]</strong></div>
     <div class="content">
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                header.style.backgroundColor = '#0f0e0b';
+            } else if (window.scrollY <= 0) {
+                // At the top of the page
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
     <footer>
         <div class="footer-content">
             <div class="footer-section">    
