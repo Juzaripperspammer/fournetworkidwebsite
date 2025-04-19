@@ -12,22 +12,22 @@
             margin: 0;
         }
         .header {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                background-color: #0f0e0b;
-                color: #ffffff;
-                z-index: 1000;
-                transition: transform 0.3s ease-in-out, visibility 0s 0.3s; /* Added visibility transition */
-                visibility: hidden; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #0f0e0b;
+            color: #ffffff;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
+            visibility: hidden; /* Initially hidden */
         }
         .header.visible {
-                visibility: visible; /* Make it visible when scrolling down */
-                transform: translateY(0); /* Position the header */
+            visibility: visible; /* Make it visible when scrolling down */
+            transform: translateY(0); /* Position the header */
         }
         .header.hidden {
-                transform: translateY(-100%);
-                visibility: hidden; /* Ensure it is hidden when above */
+            transform: translateY(-100%);
+            visibility: hidden; /* Ensure it is hidden when above */
         }
         .header-text {
             position: absolute;
@@ -53,14 +53,6 @@
             padding: 20px;
             text-align: center;
         }
-        .content input {
-            width: 300px;
-            padding: 10px;
-            margin-right: 10px;
-        }
-        .content button {
-            padding: 10px;
-        }
         footer {
             background-color: #e6a823;
             padding: 20px;
@@ -82,11 +74,6 @@
         }
         .footer-section h4 {
             margin-bottom: 10px;
-        }
-        .server-status {
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .banner {
             background-image: url('banner.png');
@@ -127,12 +114,10 @@
             </div>
         </nav>
     </header>
-
     <div class="banner">
         <div class="header-text"><h1>Four Network ID</h1></div>
         <p class="header-p">Luckyblock theme Minecraft server</p>
     </div>
-
     <div class="content">
         <div class="server-status">
             FOUR is Currently <span class="server-online"></span>!<br>
@@ -154,7 +139,7 @@
         });
         
         let lastScrollY = window.scrollY;
-        const header = document.querySelector('.header'); // Updated for accurate class target
+        const header = document.querySelector('.header');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
