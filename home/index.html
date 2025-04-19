@@ -142,14 +142,14 @@
         const header = document.querySelector('.header');
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY < lastScrollY) {
+            if (window.scrollY > lastScrollY) {
                 // Scrolling down
-                header.classList.remove('visible');
-                header.classList.add('hidden');
-            } else if (window.scrollY > lastScrollY) {
-                // Scrolling up
                 header.classList.remove('hidden');
                 header.classList.add('visible');
+            } else if (window.scrollY <= 0) {
+                // Scrolling up
+                header.classList.remove('visiblen');
+                header.classList.add('hidden');
             }   
             lastScrollY = window.scrollY;
         });
