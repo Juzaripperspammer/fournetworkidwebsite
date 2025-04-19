@@ -26,7 +26,7 @@
         }
         .header.hidden {
             transform: translateY(-100%);
-            backgrond-color: rgba(15, 14, 11, 0.8)
+            backgrond-color: rgba(15, 14, 11, 0.8);
         }
         .header-text {
             position: absolute;
@@ -159,12 +159,12 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling down
-                header.classList.remove('hidden');
-                header.classList.add('visible');
+                header.classList.remove('rgba(0, 0, 0, 0)');
+                header.classList.add('rgba(15, 14, 11, 0.8)');
             } else if (window.scrollY <= 0) {
                 // Scrolling up
-                header.classList.remove('visible');
-                header.classList.add('hidden');
+                header.classList.remove('rgba(15, 14, 11, 0.8)');
+                header.classList.add('rgba(0, 0, 0, 0)');
             }
             lastScrollY = window.scrollY;
         });
