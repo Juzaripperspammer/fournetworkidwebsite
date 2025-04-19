@@ -15,7 +15,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0); /* Initial background color */
+            background-color: #0f0e0b; /* Initial background color */
             color: #ffffff;
             z-index: 1000;
             transition: background-color 0.3s ease-in-out;
@@ -143,7 +143,7 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling down
-                header.style.backgroundColor = 'rgba(15, 14, 11, 0.8)';
+                header.style.backgroundColor = '#0f0e0b';
             } else if (window.scrollY <= 0) {
                 // At the top of the page
                 header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
