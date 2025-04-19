@@ -15,18 +15,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(15, 14, 11, 0.8);
+            background-color: rgba(0, 0, 0, 0); /* Initial background color */
             color: #ffffff;
             z-index: 1000;
-            transition: transform 0.3s ease-in-out, visibility 0s 0.3s;
-        }
-        .header.visible {
-            backgrond-color: rgba(0, 0, 0, 0)
-            transform: translateY(0);
-        }
-        .header.hidden {
-            transform: translateY(-100%);
-            backgrond-color: rgba(15, 14, 11, 0.8);
+            transition: background-color 0.3s ease-in-out;
         }
         .header-text {
             position: absolute;
@@ -52,14 +44,6 @@
             padding: 20px;
             text-align: center;
         }
-        .content input {
-            width: 300px;
-            padding: 10px;
-            margin-right: 10px;
-        }
-        .content button {
-            padding: 10px;
-        }
         footer {
             background-color: #e6a823;
             padding: 20px;
@@ -78,9 +62,6 @@
             flex: 1;
             padding: 10px;
             min-width: 200px;
-        }
-        .footer-section h4 {
-            margin-bottom: 10px;
         }
         .server-status {
             padding: 20px;
@@ -159,12 +140,10 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling down
-                header.classList.remove('rgba(0, 0, 0, 0)');
-                header.classList.add('rgba(15, 14, 11, 0.8)');
+                header.style.backgroundColor = 'rgba(15, 14, 11, 0.8)';
             } else if (window.scrollY <= 0) {
-                // Scrolling up
-                header.classList.remove('rgba(15, 14, 11, 0.8)');
-                header.classList.add('rgba(0, 0, 0, 0)');
+                // At the top of the page
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
             }
             lastScrollY = window.scrollY;
         });
