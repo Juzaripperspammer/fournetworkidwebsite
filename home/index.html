@@ -12,16 +12,22 @@
             margin: 0;
         }
         .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #0f0e0b;
-            color: #ffffff;
-            z-index: 1000;
-            transition: transform 0.3s ease-in-out;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: #0f0e0b;
+                color: #ffffff;
+                z-index: 1000;
+                transition: transform 0.3s ease-in-out, visibility 0s 0.3s; /* Added visibility transition */
+                visibility: hidden; /* Initially hidden */
+        }
+        .header.visible {
+                visibility: visible; /* Make it visible when scrolling down */
+                transform: translateY(0); /* Position the header */
         }
         .header.hidden {
-            transform: translateY(-100%);
+                transform: translateY(-100%);
+                visibility: hidden; /* Ensure it is hidden when above */
         }
         .header-text {
             position: absolute;
@@ -146,17 +152,20 @@
             document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
             document.querySelector('.player-count').innerHTML = status.players.now || 0;
         });
+        
         let lastScrollY = window.scrollY;
-        const header = document.getElementById('header');
+        const header = document.querySelector('.header'); // Updated for accurate class target
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY) {
                 // Scrolling down
-                header.classList.remove('hidden');
-            } else if (window.scrollY === 0) {
-                // At the top of the page
+                header.classList.remove('visible');
                 header.classList.add('hidden');
-            }
+            } else if (window.scrollY < lastScrollY) {
+                // Scrolling up
+                header.classList.remove('hidden');
+                header.classList.add('visible');
+            }   
             lastScrollY = window.scrollY;
         });
     </script>
