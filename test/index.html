@@ -1,2 +1,40 @@
 <!DOCTYPE html>
-<a>Nothing here bye</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Network ID</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+      }
+      h1 {
+          color: #333;
+      }
+      form {
+            margin-top: 20px;
+      }
+      input[type="text"] {
+            padding: 10px;
+            margin: 10px;
+      }
+      input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <h1>Four Network ID</h1>
+    <form action="save.php" method="post">
+        <label for="networkID">Enter Network ID:</label>
+        <input type="text" id="networkID" name="networkID" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
