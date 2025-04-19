@@ -20,7 +20,7 @@
             z-index: 1000;
             transition: transform 0.3s ease-in-out;
         }
-        .header.hidden {
+        .header .hidden {
             transform: translateY(-100%);
         }
         .header-text {
@@ -151,7 +151,7 @@
     const header = document.querySelector('.header');
     window.addEventListener('scroll', function () {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 0) {
+        if (scrollTop < 0) {
             header.classList.remove('hidden');
         } else {
             header.classList.add('hidden');
