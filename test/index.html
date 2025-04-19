@@ -35,6 +35,11 @@
             margin-top: 20px;
             font-weight: bold;
         }
+        #savedIDs {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -47,6 +52,7 @@
     </form>
 
     <div id="result"></div>
+    <div id="savedIDs"></div> <!-- Container for saved Network IDs -->
 
     <footer>
         <p>© TheFour - a Minecraft server</p>
@@ -65,11 +71,26 @@
             // Get the value from the input field
             const networkID = document.getElementById('networkID').value;
 
-            // Display the result
-            document.getElementById('result').innerText = `Network ID saved: ${networkID}`;
+            // Send the Network ID to the server using Fetch API
+            fetch('/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ networkID: networkID })
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Display the result
+                document.getElementById('result').innerText = data;
 
-            // Optionally, you can clear the input field after submission
-            document.getElementById('networkID').value = '';
+                // Optionally, you can clear the input field after submission
+                document.getElementById('networkID').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'Error saving Network ID';
+            });
         });
     </script>
 </body>
