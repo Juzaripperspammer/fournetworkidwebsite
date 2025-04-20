@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.83">
+    <title>Perks</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #ff9800;
+        margin: 0;
+      }
+      .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            color: #ffffff;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+        b {
+            color: #ffffff;
+        }
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: #ffffff;
+        }
+      footer {
+            background-color: #e6a823;
+            padding: 20px;
+            text-align: left;
+            font-size: 14px;
+            color: #ffffff;
+            width: auto;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .footer-section {
+            flex: 1;
+            padding: 10px;
+            min-width: 200px;
+        }
+        .footer-section h4 {
+            margin-bottom: 10px;
+        }
+        .footer-section p {
+            margin: 5px 0;
+        }
+        .content {
+            background-color: #ff9800;
+            padding: 20px;
+            text-align: center;
+        }
+        .content-1 {
+            background-color: #ff9800;
+            padding: 20px;
+            text-align: center;
+            height: 100px;
+        }
+        .banner {
+            background-image: url('banner.png');
+            background-color: #ff9800;
+            background-size: cover;
+            height: 370px;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+  <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Four Network ID</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/home"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/store"><b>Store</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://four.my.id/perks"><b>Perks</b></a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="https://four.my.id/discord"><b>Discord</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="header-text"><h1> COMING SOON </h1></div>
+    </div>
+    <hr>
+    <div class="content-1">
+    </div>
+    <div class="content-1">
+    </div>
+    <div class="content-1">
+    </div>
+    <div class="content-1">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down
+                header.style.backgroundColor = '#0f0e0b';
+            } else if (window.scrollY <= 0) {
+                // At the top of the page
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">    
+                <p>&copy; Four Network ID</p>
+                <p>Luckyblock Theme Server</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>          
+                <p>Email: support@four.my.id</p>      
+                <p>Discord: antophd</p>       
+                <a href="https://dc.gg/fournetwork" class="a"><p>Four Network discord server</p></a>
+            </div>
+            <div class="footer-section">           
+                <h4>Follow us</h4>     
+                <p>TikTok</p>  
+                <a href="https://tiktok.com/@antop.hd" class="a"><p>@antop.hd</p></a> 
+                <a href="https://tiktok.com/@fournetworkid" class="a"><p>@fournetworkid</p></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
