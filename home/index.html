@@ -139,7 +139,7 @@
             if (err) {
                 return document.querySelector('.server-status').innerHTML = 'Error loading status';
             }
-            document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
+            document.querySelector('.server-online').innerHTML = status.online ? 'Online!' : 'Offline!';
             document.querySelector('.player-count').innerHTML = status.players.now || 0;
         });
 
