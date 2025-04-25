@@ -137,7 +137,7 @@
         // Update server status
         MinecraftAPI.getServerStatus('mc.four.my.id', { port: 19135 }, function (err, status) {
             if (err) {
-                return document.querySelector('.server-status').innerHTML = 'Offline';
+                return document.querySelector('.server-status').innerHTML = 'Four Network ID is Offline!';
             }
             document.querySelector('.server-online').innerHTML = status.online ? 'Online' : 'Offline';
             document.querySelector('.player-count').innerHTML = status.players.now || 0;
