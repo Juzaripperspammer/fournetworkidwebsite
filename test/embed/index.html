@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=0.83">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <style>
-            .iframe {
+            iframe {
                 height: 1000;
                 width: 200;
                 position: absolute;
@@ -20,7 +20,7 @@
     </head>
     <body>
         <button class="btn btn-yellow" onclick="openframe">Test</button>
-        <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send asa anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp;display_name=test&amp;" class="iframe"></iframe>
+        <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send asa anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp;display_name=test&amp;" id="iframe"></iframe>
         <script>
             function openframe() {
                 document.getElementById("iframe").style.display = "block";
