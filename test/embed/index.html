@@ -15,7 +15,7 @@
                 transform: translate(-50%, -50%)
             }
             .exit {
-                position: absolute;
+                position: relative;
                 height: 48px;
                 width: 48px;
                 text-size-adjust: auto;
@@ -33,18 +33,11 @@
                 background-color: black;
                 height: 1000;
             }
-            .button {
-                align-items: center;
-                color: yellow;
-                border-radius: 10;
-                border-color: red;
-                transform: translate(-50%, -50%)
-            }
             </style>
     </head>
     <body>
         <a class="button btn" onclick="openframe()">Test</button>
-        <button class="exit" onclick="closeframe()" id="exit">X</button>
+        <a class="exit" onclick="closeframe()" id="exit">X</a>
         <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send asa anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp;display_name=test&amp;" id="iframe"></iframe>
         <script>
             function openframe() {
