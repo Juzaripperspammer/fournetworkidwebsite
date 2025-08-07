@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: gray;
+            }
+            .discord {
+                width: 600px;
+                height: 200px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: black;
+                color: white;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe src="discord.html" class="discord" id="discord"></iframe>
+
+        <script>
+            function opendc() {
+                document.getElementById("discrod").style.display = "block"
+            }
+        </script>
+    </body>
+</html>
