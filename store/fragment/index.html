@@ -141,6 +141,35 @@
             background-color: gray;
             color: #000000;
         }
+        iframe {
+            height: 600px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .100f {
+            display: none;
+        }
+        .500f {
+            display: none;
+        }
+        .800f {
+            display: none;
+        }
+        .1500f {
+            display: none;
+        }
+        .2000f {
+            display: none;
+        }
+        .exit {
+            position: relative;
+            left: 90%;
+            display: none;
+            top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -172,7 +201,8 @@
         <div class="header-text"><h1> RANK </h1></div>
     </div>
     <hr>
-
+    <button class="exit" onclick="100close()" id="exit">X</button>
+    <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp&amp;" id="100"></iframe>                                                                                                                                          
     <div class="card-align">
         <div class="card">
             <img src="fragment.png" alt="Rare Rank">
@@ -180,7 +210,7 @@
             <p class="p">Rp 10k</p>
             <div class="align"></div>
             <div class="align"></div>
-            <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+            <a class="button btn"><h4>ORDER</h4></a>
         </div>
         <div class="card">
             <img src="fragment.png" alt="Super Rare Rank">
@@ -240,6 +270,10 @@
             }
             lastScrollY = window.scrollY;
         });
+
+        function 100open() {
+            document.getElementById("iframe").style.display = "block";
+            document.getElementById("exit").style.display = "block";
     </script>
     <footer>
         <div class="footer-content">
