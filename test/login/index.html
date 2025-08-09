@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Example</title>
+    <script src="login.js"></script>
+</head>
+<body>
+    <input type="text" id="username" placeholder="Enter username">
+    <button onclick="login(document.getElementById('username').value)">Login</button>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        // Example: access currentUser from another script
+        if (currentUser) {
+            console.log("Currently logged in:", currentUser);
+        } else {
+            console.log("No one is logged in.");
+        }
+    </script>
+</body>
+</html>
