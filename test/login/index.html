@@ -8,13 +8,15 @@
     <input type="text" id="username" placeholder="Enter username">
     <button onclick="login(document.getElementById('username').value)">Login</button>
     <button onclick="logout()">Logout</button>
+    <p id="test">Current user: <a id="user"></a></p>
 
     <script>
         // Example: access currentUser from another script
         if (currentUser) {
-            console.log("Currently logged in:", currentUser);
+            document.getElementById("test").style.color = "green";
+            document.getElementById("user").style.content = currentUser;
         } else {
-            console.log("No one is logged in.");
+            document.getElementById("test").style.color = "red";
         }
     </script>
 </body>
