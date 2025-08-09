@@ -14,10 +14,10 @@
         // Example: access currentUser from another script
         if (currentUser) {
             document.getElementById("test").style.color = "green";
-            document.getElementById("test").style.content = currentUser;
+            document.getElementById("test").innerHTML = currentUser;
         } else {
             document.getElementById("test").style.color = "red";
-            document.getElementById("test").style.content = "guest";
+            document.getElementById("test").innerHTML = "guest";
         }
     </script>
 </body>
