@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Example</title>
-    <script src="https://four.my.id/container/login.js"></script>
+    <title>Login with Role Choice</title>
+    <script src="login.js"></script>
 </head>
 <body>
-    <input type="text" id="username" placeholder="Enter username">
-    <button onclick="login(document.getElementById('username').value)">Login</button>
-    <button onclick="logout()">Logout</button>
-    <p id="test">Current user: </p>
+    <!-- Show login form only if not logged in -->
+    <div id="loginForm" style="display: none;">
+        <input type="text" id="username" placeholder="Enter username">
+        <button onclick="login(document.getElementById('username').value, 'work')">Login as Work Username</button>
+        <button onclick="login(document.getElementById('username').value, 'other')">Login as Other Username</button>
+    </div>
+
+    <!-- Show logout button if logged in -->
+    <div id="logoutSection" style="display: none;">
+        <p>You are logged in as: <span id="displayUser"></span></p>
+        <button onclick="logout()">Logout</button>
+    </div>
 
     <script>
-        // Example: access currentUser from another script
         if (currentUser) {
-            document.getElementById("test").style.color = "green";
-            document.getElementById("test").innerHTML = currentUser;
+            document.getElementById("logoutSection").style.display = "block";
+            document.getElementById("displayUser").textContent = currentUser;
         } else {
-            document.getElementById("test").style.color = "red";
-            document.getElementById("test").innerHTML = "guest";
+            document.getElementById("loginForm").style.display = "block";
         }
     </script>
 </body>
