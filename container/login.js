@@ -40,8 +40,6 @@ function logout() {
     window.currentUser = null;
     console.log("User logged out.");
 
-    // Reload page
-    location.reload(true); // force reload ignoring cache
 }
 
 // Run checkLogin() when the script loads
