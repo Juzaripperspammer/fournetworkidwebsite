@@ -21,8 +21,6 @@ function login(username, type) {
 
     console.log("Logged in as:", window.currentUser);
 
-    // Reload page
-    location.reload(true); // force reload ignoring cache
 }
 
 // Function to check if a user is already logged in
