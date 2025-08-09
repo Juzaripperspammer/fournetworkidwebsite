@@ -1,337 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <title>Four Network ID store</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: gray;
-            margin: 0;
-        }
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0);
-            color: #ffffff;
-            z-index: 1000;
-            transition: background-color 0.3s ease-in-out;
-        }
-        b {
-            color: #ffffff;
-        }
-        .card {
-            background-color: #262423;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            width: 150px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            color: #ffffff;
-        }
-        .card img {
-            width: 80px; 
-            height: auto;
-            align-self: center;
-        }
-        .coming-soon {
-            font-size: 24px;
-            color: black;
-            font-weight: bold;
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-            font-family: Arial Black;
-        }
-        footer {
-            background-color: black;
-            padding: 20px;
-            text-align: left;
-            font-size: 14px;
-            color: #ffffff;
-            width: auto;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .footer-section {
-            flex: 1;
-            padding: 10px;
-            min-width: 200px;
-        }
-        .footer-section h4 {
-            margin-bottom: 10px;
-        }
-        .footer-section p {
-            margin: 5px 0;
-        }
-        .content {
-            background-color: gray;
-            padding: 20px;
-            text-align: center;
-        }
-        .content-1 {
-            background-color: gray;
-            padding: 20px;
-            text-align: center;
-            height: 100px;
-        }
-        .card-align {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-        .a {
-            color: #ffffff;
-        }
-        .a:hover {
-            color: #ffffff;
-        }
-        .banner {
-            background-image: url('banner.jpg');
-            background-color: gray;
-            background-size: auto;
-            background-attachment: fixed;
-            height: 370px;
-            color: white;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            width: auto;
-        }
-        .header-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            color: #ffffff;
-        }
-        h2 {
-            font-size: 120%;
-        }
-        .p {
-            font-size: 80%
-        }
-        .align {
-            color: #ffffff;
-            background-color: #262423;
-            font-size: 400%;
-            height: 23px;
-        }
-        .button {
-            width: auto;
-            height: 40px;
-            background-color: #262423;
-            color: #ffffff;
-            border-color: gray;
-        }
-        h4 {
-            font-size: 140%;
-        }
-        .button:hover {
-            background-color: gray;
-            color: #000000;
-        }
-        .iframe {
-            height: 600px;
-            width: 300px;
-            position: relative;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .fs {
-            display: none;
-        }
-        .fl {
-            display: none;
-        }
-        .fd {
-            display: none;
-        }
-        .fsl {
-            display: none;
-        }
-        .fdr {
-            display: none;
-        }
-        .exit {
-            position: relative;
-            left: 90%;
-            display: none;
-            top: 10%;
-        }
-        .blank {
-            height: 2000px;
-            width: 100%;
-            display: none;
-            position: fixed;
-            top: 0%;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">Four Network ID</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://four.my.id/home"><b>Home</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://four.my.id/store"><b>Store</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://four.my.id/perks"><b>Perks</b></a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="https://four.my.id/discord"><b>Discord</b></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <div class="banner">
-        <div class="header-text"><h1> RANK </h1></div>
-    </div>
-    <hr>
-    <div class="card-align">
-        <div class="card">
-            <img src="fragment.png" alt="Rare Rank">
-            <h2>x100 fragment</h2>
-            <p class="p">Rp 10k</p>
-            <div class="align"></div>
-            <div class="align"></div>
-            <a class="button btn" onclick="opens()"><h4>ORDER</h4></a>
-        </div>
-        <div class="card">
-            <img src="fragment.png" alt="Super Rare Rank">
-            <h2>x500 fragment</h2>
-            <p class="p">Rp 50k</p>
-            <div class="align"></div>
-            <div class="align"></div>
-            <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
-        </div>
-        <div class="card">
-            <img src="fragment.png" alt="Super Super Rare Rank">
-            <h2>x800 fragment</h2>
-            <p class="p">Rp 80k</p>
-            <div class="align"></div>
-            <div class="align"></div>
-            <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
-        </div>
-        <div class="card">
-            <img src="fragment.png" alt="Super Super Rare+ Rank">
-            <h2>x1500 fragment</h2>
-            <p class="p">Rp 150k</p>
-            <div class="align"></div>
-            <div class="align"></div>
-            <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
-        </div>
-        <div class="card">
-            <img src="fragment.png" alt="Super Super Rare++ Rank">
-            <h2>x2000 fragment</h2>
-            <p class="p">Rp 200k</p>
-            <div class="align"></div>
-            <div class="align"></div>
-            <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
-        </div>
-    </div>
-    <iframe src="blank.html" class="blank" id="blank"></iframe>
-    <button class="exit" onclick="close()" id="exit">X</button>
-    <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp&amp;" id="fs" class="fs iframe"></iframe>
-    <div>
-        <img src="" alt="">
-        <h2></h2>
-        <p></p>
-        <a href=""></a>
-    </div>
-    <div class="content-1"></div>
-    <div class="content-1"></div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        let lastScrollY = window.scrollY;
-        const header = document.querySelector('.header');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY) {
-                // Scrolling down
-                header.style.backgroundColor = '#0f0e0b';
-            } else if (window.scrollY <= 0) {
-                // At the top of the page
-                header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <title>Four Network ID store</title>
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: gray;
+                margin: 0;
             }
-            lastScrollY = window.scrollY;
-        });
-
-        function opens() {
-            document.getElementById("fs").style.display = "block";
-            document.getElementById("blank").style.display = "block";
-            document.getElementById("exit").style.display = "block";
-        }
-        function openl() {
-            document.getElementById("l").style.display = "block";
-            document.getElementById("exit").style.display = "block";
-        }
-        function opend() {
-            document.getElementById("d").style.display = "block";
-            document.getElementById("exit").style.display = "block";
-        }
-        function opensl() {
-            document.getElementById("sl").style.display = "block";
-            document.getElementById("exit").style.display = "block";
-        }
-        function opendr() {
-            document.getElementById("dr").style.display = "block";
-            document.getElementById("exit").style.display = "block";
-        }
-        function close() {
-            document.getElementById("exit").style.display = "none";
-            document.getElementById("blank").style.display = "none";
-            document.getElementById("fs").style.display = "none";
-            document.getElementById("fl").style.display = "none";
-            document.getElementById("fd").style.display = "none";
-            document.getElementById("fsl").style.display = "none";
-            document.getElementById("fdr").style.display = "none";
-        }
-    </script>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">    
-                <p>&copy; Four Network ID</p>
-                <p>Luckyblock Theme Server</p>
+            .header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0);
+                color: #ffffff;
+                z-index: 1000;
+                transition: background-color 0.3s ease-in-out;
+            }
+            b {
+                color: #ffffff;
+            }
+            .card {
+                background-color: #262423;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 10px;
+                text-align: center;
+                width: 150px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                color: #ffffff;
+            }
+            .card img {
+                width: 80px; 
+                height: auto;
+                align-self: center;
+            }
+            .coming-soon {
+                font-size: 24px;
+                color: black;
+                font-weight: bold;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                font-family: Arial Black;
+            }
+            footer {
+                background-color: black;
+                padding: 20px;
+                text-align: left;
+                font-size: 14px;
+                color: #ffffff;
+                width: auto;
+            }
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: auto;
+            }
+            .footer-section {
+                flex: 1;
+                padding: 10px;
+                min-width: 200px;
+            }
+            .footer-section h4 {
+                margin-bottom: 10px;
+            }
+            .footer-section p {
+                margin: 5px 0;
+            }
+            .content {
+                background-color: gray;
+                padding: 20px;
+                text-align: center;
+            }
+            .content-1 {
+                background-color: gray;
+                padding: 20px;
+                text-align: center;
+                height: 100px;
+            }
+            .card-align {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+            }
+            .a {
+                color: #ffffff;
+            }
+            .a:hover {
+                color: #ffffff;
+            }
+            .banner {
+                background-image: url('banner.jpg');
+                background-color: gray;
+                background-size: auto;
+                background-attachment: fixed;
+                height: 370px;
+                color: white;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                position: relative;
+                width: auto;
+            }
+            .header-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2em;
+                   color: #ffffff;
+            }
+            h2 {
+                font-size: 120%;
+            }
+            .p {
+                font-size: 80%
+            }
+            .align {
+                color: #ffffff;
+                background-color: #262423;
+                font-size: 400%;
+                height: 23px;
+            }
+            .button {
+                width: auto;
+                height: 40px;
+                background-color: #262423;
+                color: #ffffff;
+                border-color: gray;
+            }
+            h4 {
+                font-size: 140%;
+            }
+            .button:hover {
+                background-color: gray;
+                color: #000000;
+            }
+            .iframe{
+                height: 600px;
+                width: 300px;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .fs {
+                display: none;
+            }
+            .fl {
+                display: none;
+            }
+            .fd {
+                display: none;
+            }
+            .fsl {
+                display: none;
+            }
+            .fdr {
+                display: none;
+            }
+            .exit {
+                position: relative;
+                left: 90%;
+                display: none;
+                top: 10%;
+            }
+            .blank {
+                height: 2000px;
+                width: 100%;
+                display: none;
+                position: fixed;
+                top: 0%;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#">Four Network ID</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://four.my.id/home"><b>Home</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://four.my.id/store"><b>Store</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://four.my.id/perks"><b>Perks</b></a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="https://four.my.id/discord"><b>Discord</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="banner">
+            <div class="header-text"><h1> RANK </h1></div>
+        </div>
+        <hr>
+        <div class="card-align">
+            <div class="card">
+                <img src="fragment.png" alt="Rare Rank">
+                <h2>x100 fragment</h2>
+                <p class="p">Rp 10k</p>
+                <div class="align"></div>
+                <div class="align"></div>
+                <a class="button btn" onclick="opens()"><h4>ORDER</h4></a>
             </div>
-            <div class="footer-section">
-                <h4>Contact</h4>          
-                <p>Email: support@four.my.id</p>      
-                <p>Discord: antophd</p>       
-                <a href="https://four.my.id/discord" class="a"><p>Four Network discord server</p></a>
+            <div class="card">
+                <img src="fragment.png" alt="Super Rare Rank">
+                <h2>x500 fragment</h2>
+                <p class="p">Rp 50k</p>
+                <div class="align"></div>
+                <div class="align"></div>
+                <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
             </div>
-            <div class="footer-section">           
-                <h4>Follow us</h4>     
-                <p>TikTok</p>  
-                <a href="https://tiktok.com/@antop.hd" class="a"><p>@antop.hd</p></a> 
-                <a href="https://tiktok.com/@fournetworkid" class="a"><p>@fournetworkid</p></a>
+            <div class="card">
+                <img src="fragment.png" alt="Super Super Rare Rank">
+                <h2>x800 fragment</h2>
+                <p class="p">Rp 80k</p>
+                <div class="align"></div>
+                <div class="align"></div>
+                <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+            </div>
+            <div class="card">
+                <img src="fragment.png" alt="Super Super Rare+ Rank">
+                <h2>x1500 fragment</h2>
+                <p class="p">Rp 150k</p>
+                <div class="align"></div>
+                <div class="align"></div>
+                <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+            </div>
+            <div class="card">
+                <img src="fragment.png" alt="Super Super Rare++ Rank">
+                <h2>x2000 fragment</h2>
+                <p class="p">Rp 200k</p>
+                <div class="align"></div>
+                <div class="align"></div>
+                <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
             </div>
         </div>
-    </footer>
-</body>
+        <iframe src="blank.html" class="blank" id="blank"></iframe>
+        <button class="exit" onclick="close()" id="exit">X</button>
+        <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp&amp;" id="fs" class="fs iframe"></iframe>
+        <div>
+            <img src="" alt="">
+            <h2></h2>
+            <p></p>
+            <a href=""></a>
+        </div>
+        <div class="content-1"></div>
+        <div class="content-1"></div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            let lastScrollY = window.scrollY;
+            const header = document.querySelector('.header');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY) {
+                    // Scrolling down
+                    header.style.backgroundColor = '#0f0e0b';
+                } else if (window.scrollY <= 0) {
+                    // At the top of the page
+                    header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            function opens() {
+                document.getElementById("fs").style.display = "block";
+                document.getElementById("blank").style.display = "block";
+                document.getElementById("exit").style.display = "block";
+            }
+            function openl() {
+                document.getElementById("l").style.display = "block";
+                document.getElementById("exit").style.display = "block";
+            }
+            function opend() {
+                document.getElementById("d").style.display = "block";
+                document.getElementById("exit").style.display = "block";
+            }
+            function opensl() {
+                document.getElementById("sl").style.display = "block";
+                document.getElementById("exit").style.display = "block";
+            }
+            function opendr() {
+                document.getElementById("dr").style.display = "block";
+                document.getElementById("exit").style.display = "block";
+            }
+            function close() {
+                document.getElementById("exit").style.display = "none";
+                document.getElementById("blank").style.display = "none";
+                document.getElementById("fs").style.display = "none";
+                document.getElementById("fl").style.display = "none";
+                document.getElementById("fd").style.display = "none";
+                document.getElementById("fsl").style.display = "none";
+                document.getElementById("fdr").style.display = "none";
+            }
+        </script>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">    
+                    <p>&copy; Four Network ID</p>
+                    <p>Luckyblock Theme Server</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>          
+                    <p>Email: support@four.my.id</p>      
+                    <p>Discord: antophd</p>       
+                    <a href="https://four.my.id/discord" class="a"><p>Four Network discord server</p></a>
+                </div>
+                <div class="footer-section">           
+                    <h4>Follow us</h4>     
+                    <p>TikTok</p>  
+                    <a href="https://tiktok.com/@antop.hd" class="a"><p>@antop.hd</p></a> 
+                    <a href="https://tiktok.com/@fournetworkid" class="a"><p>@fournetworkid</p></a>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
