@@ -9,8 +9,7 @@ function login(username, type) {
     }
 
     let finalUsername = username.trim();
-
-    if (type == "work") {
+    if (type === "work") {
         finalUsername = "@" + finalUsername;
     }
 
@@ -23,7 +22,7 @@ function login(username, type) {
     console.log("Logged in as:", window.currentUser);
 
     // Reload page
-    location.reload();
+    location.reload(true); // force reload ignoring cache
 }
 
 // Function to check if a user is already logged in
@@ -44,7 +43,7 @@ function logout() {
     console.log("User logged out.");
 
     // Reload page
-    location.reload();
+    location.reload(true); // force reload ignoring cache
 }
 
 // Run checkLogin() when the script loads
