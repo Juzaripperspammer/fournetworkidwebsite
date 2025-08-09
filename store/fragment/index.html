@@ -144,10 +144,10 @@
             background-color: gray;
             color: #000000;
         }
-        iframe {
+        .iframe {
             height: 600px;
             width: 300px;
-            position: relative;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -168,10 +168,15 @@
             display: none;
         }
         .exit {
-            position: relative;
+            position: absolute;
             left: 90%;
             display: none;
             top: 10%;
+        }
+        .blank {
+            height: 100%;
+            width: 100%;
+            display: none;
         }
     </style>
 </head>
@@ -246,8 +251,9 @@
             <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
         </div>
     </div>
+    <iframe src="blank.html" class=".blank" id="blank"></iframe>
     <button class="exit" onclick="close()" id="exit">X</button>
-    <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp&amp;" id="fs" class="fs"></iframe>
+    <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp&amp;" id="fs" class="fs .iframe"></iframe>
     <div>
         <img src="" alt="">
         <h2></h2>
@@ -276,6 +282,7 @@
 
         function opens() {
             document.getElementById("fs").style.display = "block";
+            document.getElementById("blank").style.display = "block";
             document.getElementById("exit").style.display = "block";
         }
         function openl() {
@@ -296,6 +303,7 @@
         }
         function close() {
             document.getElementById("exit").style.display = "none";
+            document.getElementById("blank").style.display = "none";
             document.getElementById("fs").style.display = "none";
             document.getElementById("fl").style.display = "none";
             document.getElementById("fd").style.display = "none";
