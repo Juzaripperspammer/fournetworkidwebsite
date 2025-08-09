@@ -320,7 +320,9 @@
                 document.getElementById("fd").style.display = "none";
                 document.getElementById("fsl").style.display = "none";
                 document.getElementById("fdr").style.display = "none";
-                window.location.reload(true);
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 50);
             }
         </script>
         <footer>
