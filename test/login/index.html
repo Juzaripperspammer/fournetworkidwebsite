@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login with Role Choice</title>
-    <script src="https://four.my.id/container/login.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #logoutSection {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+    <h1>Login Page</h1>
+
     <div id="loginForm">
         <input type="text" id="username" placeholder="Enter username">
-        <button id="loginBedrock" type="button">Bedrock</button>
-        <button id="loginJava" type="button">Java</button>
+        <br><br>
+        <button id="loginBedrock">Login as Bedrock</button>
+        <button id="loginJava">Login as Java</button>
     </div>
 
-    <div id="logoutSection" style="display: none;">
-        <p>You are logged in as: <span id="displayUser"></span></p>
-        <button id="logoutBtn" type="button">Logout</button>
+    <div id="logoutSection">
+        <p>Welcome, <span id="displayUser"></span>!</p>
+        <button id="logoutBtn">Logout</button>
     </div>
+
+    <!-- Load your external JS -->
+    <script src="https://four.my.id/container/login.js"></script>
 </body>
 </html>
