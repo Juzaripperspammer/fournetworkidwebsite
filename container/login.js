@@ -1,23 +1,26 @@
-// Always track current user globally
 window.currentUser = localStorage.getItem("username") || null;
 
 function login(username, type) {
     if (!username || username.trim() === "") {
-        alert("Please enter a username");
+        alert("Invalid username");
         return;
     }
 
-    let finalUsername = username.trim();
-    if (type === "work") {
-        finalUsername = "@" + finalUsername;
+    const Invalidusername = /^[a-zA-Z0-9_]{3,16}$/;
+    if (!Invalidusername.test(username.trim())) {
+        alert("Invalid username");
+        return;
     }
+    let finalUsername = username.trim();
+    if (type === "bedrock") {
+        finalUsername = "." + finalUsername;
+    }
+
+
 
     localStorage.setItem("username", finalUsername);
     window.currentUser = finalUsername;
 
-    console.log("Logged in as:", finalUsername);
-
-    // Hard reload so nothing blocks it
     window.location.replace(window.location.href);
 }
 
@@ -25,20 +28,16 @@ function logout() {
     localStorage.removeItem("username");
     window.currentUser = null;
 
-    console.log("User logged out.");
-
-    // Hard reload
     window.location.replace(window.location.href);
 }
 
-// Setup UI after DOM loads
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("loginForm");
     const logoutSection = document.getElementById("logoutSection");
     const displayUser = document.getElementById("displayUser");
 
-    const loginWorkBtn = document.getElementById("loginWork");
-    const loginOtherBtn = document.getElementById("loginOther");
+    const loginBedrockBtn = document.getElementById("loginBedrock");
+    const loginJavaBtn = document.getElementById("loginJava");
     const logoutBtn = document.getElementById("logoutBtn");
 
     if (window.currentUser) {
@@ -50,12 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
         logoutSection.style.display = "none";
     }
 
-    loginWorkBtn.addEventListener("click", () => {
-        login(document.getElementById("username").value, "work");
+    loginBedrockBtn.addEventListener("click", () => {
+        login(document.getElementById("username").value, "bedrock");
     });
 
-    loginOtherBtn.addEventListener("click", () => {
-        login(document.getElementById("username").value, "other");
+    loginJavaBtn.addEventListener("click", () => {
+        login(document.getElementById("username").value, "java");
     });
 
     logoutBtn.addEventListener("click", () => {
