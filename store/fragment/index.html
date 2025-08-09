@@ -224,7 +224,7 @@
                         <p class="p">Rp 10k</p>
                         <div class="align"></div>
                         <div class="align"></div>
-                        <a class="button btn" onclick="opens()"><h4>ORDER</h4></a>
+                        <a class="button btn" onclick="opens(100)"><h4>ORDER</h4></a>
                     </div>
                     <div class="card">
                         <img src="fragment.png" alt="Super Rare Rank">
@@ -232,7 +232,7 @@
                         <p class="p">Rp 50k</p>
                         <div class="align"></div>
                         <div class="align"></div>
-                        <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+                        <a class="button btn" onclick="opens(500)"><h4>ORDER</h4></a>
                     </div>
                     <div class="card">
                         <img src="fragment.png" alt="Super Super Rare Rank">
@@ -240,7 +240,7 @@
                         <p class="p">Rp 80k</p>
                         <div class="align"></div>
                         <div class="align"></div>
-                        <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+                        <a class="button btn" onclick="opens(800)"><h4>ORDER</h4></a>
                     </div>
                     <div class="card">
                         <img src="fragment.png" alt="Super Super Rare+ Rank">
@@ -248,7 +248,7 @@
                         <p class="p">Rp 150k</p>
                         <div class="align"></div>
                         <div class="align"></div>
-                        <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+                        <a class="button btn" onclick="opens(100)"><h4>ORDER</h4></a>
                     </div>
                     <div class="card">
                         <img src="fragment.png" alt="Super Super Rare++ Rank">
@@ -256,7 +256,7 @@
                         <p class="p">Rp 200k</p>
                         <div class="align"></div>
                         <div class="align"></div>
-                        <a href="https://four.my.id/payment" class="button btn"><h4>ORDER</h4></a>
+                        <a class="button btn" onclick="opens(100)"><h4>ORDER</h4></a>
                     </div>
                 </div>
             </div>
@@ -307,7 +307,9 @@
                 lastScrollY = window.scrollY;
             });
 
-            function opens() {
+            function opens(amount) {
+                const am = amount/10
+                document.getElementById("fs").src = 'https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity={am}&amp;payment_method=qris&amp&amp;';
                 document.getElementById("fs").style.display = "block";
                 document.getElementById("blank").style.display = "block";
                 document.getElementById("exit").style.display = "block";
