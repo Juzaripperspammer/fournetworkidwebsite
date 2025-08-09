@@ -6,14 +6,14 @@
 </head>
 <body>
     <!-- Login form -->
-    <div id="loginForm" style="display: block;">
+    <div id="loginForm" style="display: none;">
         <input type="text" id="username" placeholder="Enter username">
         <button type="button" onclick="login(document.getElementById('username').value, 'work')">Login as Work Username</button>
         <button type="button" onclick="login(document.getElementById('username').value, 'other')">Login as Other Username</button>
     </div>
 
     <!-- Logout section -->
-    <div id="logoutSection" style="display: none;">
+    <div id="logoutSection" style="display: block;">
         <p>You are logged in as: <span id="displayUser"></span></p>
         <button type="button" onclick="logout()">Logout</button>
     </div>
