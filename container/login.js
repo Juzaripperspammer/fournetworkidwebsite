@@ -6,8 +6,8 @@ function login(username, type) {
         return;
     }
 
-    const Invalidusername = /^[a-zA-Z0-9_]{3,16}$/;
-    if (!Invalidusername.test(username.trim())) {
+    const invalidusername = /^[a-zA-Z0-9_]{3,16}$/;
+    if (!invalidusername.test(username.trim())) {
         alert("Invalid username");
         return;
     }
