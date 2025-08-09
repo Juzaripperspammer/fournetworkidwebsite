@@ -6,8 +6,8 @@ function login(username, type) {
         return;
     }
 
-    const invalidusername = /^[a-zA-Z0-9_]{3,16}$/;
-    if (!invalidusername.test(username.trim())) {
+    const validusername = /^[a-zA-Z0-9_]{3,16}$/;
+    if (!validusername.test(username.trim())) {
         alert("Invalid username");
         return;
     }
@@ -20,7 +20,7 @@ function login(username, type) {
 
 
     localStorage.setItem("username", changer + finalUsername);
-    window.currentUser = finalUsername;
+    window.currentUser = changer + finalUsername;
 
     window.location.replace(window.location.href);
 }
