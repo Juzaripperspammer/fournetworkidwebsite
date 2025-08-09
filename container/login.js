@@ -10,7 +10,7 @@ function login(username, type) {
 
     let finalUsername = username.trim();
 
-    if (type === "work") {
+    if (type == "work") {
         finalUsername = "@" + finalUsername;
     }
 
