@@ -11,14 +11,15 @@ function login(username, type) {
         alert("Invalid username");
         return;
     }
+    let changer = "";
     let finalUsername = username.trim();
     if (type === "bedrock") {
-        finalUsername = "." + finalUsername;
+        finalUsername = finalUsername;
+        changer = "."
     }
 
 
-
-    localStorage.setItem("username", finalUsername);
+    localStorage.setItem("username", changer + finalUsername);
     window.currentUser = finalUsername;
 
     window.location.replace(window.location.href);
