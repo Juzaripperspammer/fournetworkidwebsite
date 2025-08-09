@@ -21,9 +21,11 @@
     <script>
         // Show correct UI depending on login state
         if (currentUser) {
+            document.getElementById("loginForm").style.display = "none";
             document.getElementById("logoutSection").style.display = "block";
-            document.getElementById("displayUser").textContent = currentUser;
+            document.getElementById("displayUser").innerHTML = currentUser;
         } else {
+            document.getElementById("logoutSection").style.display = "none";
             document.getElementById("loginForm").style.display = "block";
         }
     </script>
