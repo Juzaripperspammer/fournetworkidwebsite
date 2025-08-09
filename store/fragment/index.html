@@ -181,16 +181,13 @@
                 position: fixed;
                 top: 0%;
             }
-            .body {
-                display: block;
-            }
         </style>
     </head>
     <body>
         <iframe src="blank.html" class="blank" id="blank"></iframe>
         <button class="exit" onclick="closes()" id="exit">X</button>
         <iframe src="https://trakteer.id/antopHD/tip/embed/modal?step=2&amp;supporter_message=Hai, jangan pencet send as anonymouse ya biar w ga bingnung -_-&amp;quantity=10&amp;payment_method=qris&amp&amp;" id="fs" class="fs iframe"></iframe>
-        <div class="body" id="body">
+        <div id="body">
             <header class="header">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <a class="navbar-brand" href="#">Four Network ID</a>
@@ -320,9 +317,8 @@
                 document.getElementById("fd").style.display = "none";
                 document.getElementById("fsl").style.display = "none";
                 document.getElementById("fdr").style.display = "none";
-                setTimeout(() => {
-                    window.location.reload(true);
-                }, 50);
+                document.getElementById("body").style.display = "flex";
+
             }
         </script>
         <footer>
